@@ -170,6 +170,9 @@ money_img.addEventListener("touchstart",function(e){
     x=e.offsetX;
     y=e.offsetY;
     document.addEventListener("touchmove",function(e){
+        if (e.type === "touchmove") {
+            e.preventDefault();
+        }
         img_left=e.clientX - x -cover.getBoundingClientRect().left;
         img_top = e.clientY - y  -cover.getBoundingClientRect().top; //-cover.getBoundingClientRect().top是因為錢在這個容器裡面
 
@@ -202,7 +205,6 @@ document.addEventListener("touchend",function(){
     }
 
 });
-
 
 
 
